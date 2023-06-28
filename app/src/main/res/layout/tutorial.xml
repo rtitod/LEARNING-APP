@@ -7,7 +7,7 @@
     <TextView 
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="English Learning App"
+        android:text="Travel Through Words"
         android:textColor="#500000"
         android:textSize="20dp"
         android:gravity="center"

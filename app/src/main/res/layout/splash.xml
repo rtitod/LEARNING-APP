@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/teal_700">
+    android:background="@color/pale_turquoise">
 
     <TextView
         android:layout_width="match_parent"
@@ -12,8 +12,8 @@
         android:layout_marginTop="60dp"
         android:fontFamily="@font/asset"
         android:gravity="center"
-        android:text="English"
-        android:textColor="@color/white"
+        android:text="Travel "
+        android:textColor="@color/chocolate"
         android:textSize="30sp" />
 
     <TextView
@@ -21,10 +21,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:fontFamily="@font/asset"
-        android:text="Learning"
-        android:textColor="@color/purple_200"
+        android:text="Through"
+        android:textColor="@color/fire_brick"
         android:textSize="30sp"
-        android:gravity="end"
+        android:gravity="center"
         android:layout_marginEnd="10dp" />
 
     <TextView
@@ -32,8 +32,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:fontFamily="@font/asset"
-        android:text="For"
-        android:textColor="@color/white"
+        android:text="Words"
+        android:textColor="@color/chocolate"
         android:textSize="30sp"
         android:gravity="center"
         android:layout_marginStart="10dp" />
@@ -44,9 +44,9 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="60dp"
         android:fontFamily="@font/holtwood_one_sc"
-        android:gravity="start"
-        android:text="Kids"
-        android:textColor="@color/purple_200"
+        android:gravity="center"
+        android:text="A Learning App"
+        android:textColor="@color/fire_brick"
         android:textSize="35sp" />
 
 

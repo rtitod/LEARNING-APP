@@ -41,7 +41,7 @@ public class SPLASH extends Activity implements OnInitListener {
                     Intent i = new Intent(SPLASH.this, PronunciationmadeeasyActivity.class);
                     finish();
                     startActivity(i);
-                    speakWords("Welcome to my English Learning Application: by CodeLytical");
+                    speakWords("Welcome to my Learning English App");
 
                 }
 

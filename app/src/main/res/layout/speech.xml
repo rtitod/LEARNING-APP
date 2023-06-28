@@ -7,7 +7,12 @@
     
 <TextView
         android:layout_width="fill_parent"
-        android:layout_height="100dp"/>
+        android:hint="Speech"
+        android:gravity="center"
+        android:layout_height="100dp"
+        android:textColor="@color/chocolate"
+        android:fontFamily="@font/asset"
+        android:textSize="30sp" />
 
 <LinearLayout
     android:layout_width="fill_parent"
@@ -20,7 +25,7 @@
     <EditText
             android:id="@+id/txtInput"
             android:layout_width="250dp"
-            android:hint="Enter Text"
+            android:hint="Please enter some text"
             android:lines="25"
             android:scrollHorizontally="false"
             android:inputType="textMultiLine"
