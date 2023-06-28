@@ -81,7 +81,7 @@ public class PronunciationmadeeasyActivity extends Activity {
 						
 						
 					        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(codelytical);
-					        alertDialogBuilder.setTitle("Hello boss!");
+					        alertDialogBuilder.setTitle("Alert!");
 					        alertDialogBuilder
 					                .setMessage("Are you sure you want to exit?")
 					                .setCancelable(false)

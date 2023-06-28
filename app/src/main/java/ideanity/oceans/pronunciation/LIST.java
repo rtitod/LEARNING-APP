@@ -12,21 +12,7 @@ import android.widget.AdapterView.OnItemClickListener;
 
 public class LIST extends ListActivity implements OnClickListener {
 
-    static final String[] TOPICS = new String[]{"Lesson 1: English Word Pronunciation",
-            "Lesson 2: Word Stress and Syllables",
-            "Lesson 3: Long E sound (meet, see)",
-            "Lesson 4: Short I Sound (sit, hit)",
-            "Lesson 5: UH Sound (put, foot)",
-            "Lesson 6: OO Sound (moon, blue)",
-            "Lesson 7: Short E sound (pen, bed)",
-            "Lesson 8: Schwa Sound (the, about)",
-            "Lesson 9: UR Sound (turn, learn)",
-            "Lesson 10: OH Sound (four, store)",
-            "Lesson 11: Short A Sound (cat, fat)",
-            "Lesson 12: UH Sound (but, luck)",
-            "Lesson 13: Soft A Sound",
-            "Lesson 14: Long O Sound",
-            "Lesson 15: Long A Sound",};
+    static final String[] TOPICS = new String[]{"Lesson 1: English Word Pronunciation"};
 
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
