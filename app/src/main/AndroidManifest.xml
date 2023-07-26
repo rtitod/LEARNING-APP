@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ideanity.oceans.pronunciation">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/icon"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Pronunciation">
+        android:theme="@style/Theme.GES_App_English"
+        tools:targetApi="31" >
         <activity
             android:name=".SPLASH"
+            android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,6 +25,7 @@
 
         <activity
             android:name=".PronunciationmadeeasyActivity"
+            android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name=".PronunciationmadeeasyActivity" />
@@ -30,6 +36,7 @@
 
         <activity
             android:name=".SPEECH"
+            android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name=".SPEECH" />
@@ -40,6 +47,7 @@
 
         <activity
             android:name=".WORD"
+            android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name=".WORD" />
@@ -50,6 +58,7 @@
 
         <activity
             android:name=".LIST"
+            android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name=".LIST" />
@@ -60,6 +69,7 @@
 
         <activity
             android:name=".TUTORIAL"
+            android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name=".TUTORIAL" />
@@ -68,5 +78,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
