@@ -1,120 +1,85 @@
 package com.example.ges_app_english;
 
-import java.util.Locale;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import java.util.Locale;
+
 public class SPEECH extends Activity {
 
-    float pitch = -1;
-    float speechRate = -1;
-    ImageButton btnBack;
-    ImageButton btnClear;
-    TextToSpeech ttobj;
+    private float pitch = -1;
+    private float speechRate = -1;
+    private ImageButton btnBack;
+    private ImageButton btnClear;
+    private TextToSpeech ttobj;
     private EditText write;
 
-
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         setContentView(R.layout.speech);
 
-        //------------------ start text to speech ---------------------
-        write = (EditText) findViewById(R.id.txtInput);
+        // Inicializar TextToSpeech
+        ttobj = new TextToSpeech(getApplicationContext(), status -> {
+            if (status != TextToSpeech.ERROR) {
+                ttobj.setLanguage(Locale.US);
+                /**
 
-
-        ttobj = new TextToSpeech(getApplicationContext(),
-                new TextToSpeech.OnInitListener() {
-                    public void onInit(int status) {
-
-                        if (status != TextToSpeech.ERROR) {
-                            ttobj.setLanguage(Locale.US);
-
-                            /**
-
-                             Sr.No	Locale
-                             1	US
-                             2	CANADA_FRENCH
-                             3	GERMANY
-                             4	ITALY
-                             5	JAPAN
-                             6	CHINA
-                             7	UK
-                             **/
-
-                        }
-                    }
-                });
-
-        //------------------ end text to speech ---------------------
-
-
-        addButtonListener();
-
-    }
-
-    private void addButtonListener() {
-        // TODO Auto-generated method stub
-
-        //----------- Star Button back --------------------------------------
-
-        btnBack = (ImageButton) findViewById(R.id.btnBack);
-        btnBack.setOnClickListener(new OnClickListener() {
-
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-
-                Intent e = new Intent(SPEECH.this, PronunciationmadeeasyActivity.class);
-                startActivity(e);
-
+                 Sr.No	Locale
+                 1	US
+                 2	CANADA_FRENCH
+                 3	GERMANY
+                 4	ITALY
+                 5	JAPAN
+                 6	CHINA
+                 7	UK
+                 **/
             }
-
         });
 
-        //----------- end Button back --------------------------------------
+        // Obtener referencias a las vistas
+        write = findViewById(R.id.txtInput);
+        btnBack = findViewById(R.id.btnBack);
+        btnClear = findViewById(R.id.btnClear);
 
-        //----------- Star Button Clear --------------------------------------
-        btnClear = (ImageButton) findViewById(R.id.btnClear);
-        btnClear.setOnClickListener(new OnClickListener() {
-
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-
-                write.setText("");
-                ttobj.stop();
-
-            }
-
-        });
-
-        //----------- end Button Clear --------------------------------------
-
-
+        // Agregar listeners a los botones
+        addButtonListeners();
     }
 
+    private void addButtonListeners() {
+        // Botón Back
+        btnBack.setOnClickListener(v -> {
+            Intent e = new Intent(SPEECH.this, PronunciationmadeeasyActivity.class);
+            startActivity(e);
+        });
 
-    public void onPause() {
+        // Botón Clear
+        btnClear.setOnClickListener(v -> {
+            write.setText("");
+            stopSpeaking();
+        });
+    }
+
+    private void stopSpeaking() {
         if (ttobj != null) {
             ttobj.stop();
         }
+    }
+
+    public void onPause() {
+        stopSpeaking();
         super.onPause();
     }
 
     public void speakText(View view) {
-
         ttobj.setPitch(pitch);
         ttobj.setSpeechRate(speechRate);
         String toSpeak = write.getText().toString();
         ttobj.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-
-
     }
-
 }

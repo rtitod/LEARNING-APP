@@ -3,6 +3,7 @@ package com.example.ges_app_english;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Pair;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -10,14 +11,56 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
+class TOPICS_ELEMENT {
+    private String LESSON;
+    private String pme;
+    private String number;
+
+    public TOPICS_ELEMENT(String LESSON, String pme, String number) {
+        this.LESSON = LESSON;
+        this.pme = pme;
+        this.number = number;
+    }
+    public String getLESSON() {
+        return LESSON;
+    }
+    public void setLESSON(String LESSON) {
+        this.LESSON = LESSON;
+    }
+    public String getpme() {
+        return pme;
+    }
+    public void setpme(String pme) {
+        this.pme = pme;
+    }
+    public String getnumber() {
+        return number;
+    }
+    public void setnumber(String number) {
+        this.number = number;
+    }
+}
 public class LIST extends ListActivity implements OnClickListener {
 
-    static final String[] TOPICS = new String[]{"Lesson 1: English Word Pronunciation"};
-
+    private ArrayList<TOPICS_ELEMENT> TOPICS = new ArrayList<>();
+    private ArrayList<String> TOPICS_STRING = new ArrayList<>();
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
-        setListAdapter(new ArrayAdapter<String>(this, R.layout.list, TOPICS));
+
+        // Cargar los elementos de la lista desde el archivo "lesson_list.txt" en assets
+        loadTopicsFromAssets();
+
+        for (TOPICS_ELEMENT elemento : TOPICS) {
+            TOPICS_STRING.add(elemento.getLESSON());
+        }
+        setListAdapter(new ArrayAdapter<String>(this, R.layout.list, TOPICS_STRING));
 
         ListView listView = getListView();
         listView.setTextFilterEnabled(true);
@@ -30,67 +73,8 @@ public class LIST extends ListActivity implements OnClickListener {
                 Bundle b = new Bundle();
                 String selectedValue = (String) getListAdapter().getItem(position);
 
-                //------------ Conditions -------------------------------------
-                if (selectedValue.equals("Lesson 1: English Word Pronunciation")) {
-                    b.putString("pme1", "1");
-
-                }
-                if (selectedValue.equals("Lesson 2: Word Stress and Syllables")) {
-                    b.putString("pme1", "2");
-
-                }
-                if (selectedValue.equals("Lesson 3: Long E sound (meet, see)")) {
-                    b.putString("pme1", "3");
-
-                }
-                if (selectedValue.equals("Lesson 4: Short I Sound (sit, hit)")) {
-                    b.putString("pme1", "4");
-
-                }
-                if (selectedValue.equals("Lesson 5: UH Sound (put, foot)")) {
-                    b.putString("pme1", "5");
-
-                }
-                if (selectedValue.equals("Lesson 6: OO Sound (moon, blue)")) {
-                    b.putString("pme1", "6");
-
-                }
-                if (selectedValue.equals("Lesson 7: Short E sound (pen, bed)")) {
-                    b.putString("pme1", "7");
-
-                }
-                if (selectedValue.equals("Lesson 8: Schwa Sound (the, about)")) {
-                    b.putString("pme1", "8");
-
-                }
-                if (selectedValue.equals("Lesson 9: UR Sound (turn, learn)")) {
-                    b.putString("pme1", "9");
-
-                }
-                if (selectedValue.equals("Lesson 10: OH Sound (four, store)")) {
-                    b.putString("pme1", "10");
-
-                }
-                if (selectedValue.equals("Lesson 11: Short A Sound (cat, fat)")) {
-                    b.putString("pme1", "11");
-
-                }
-                if (selectedValue.equals("Lesson 12: UH Sound (but, luck)")) {
-                    b.putString("pme1", "12");
-
-                }
-                if (selectedValue.equals("Lesson 13: Soft A Sound")) {
-                    b.putString("pme1", "13");
-
-                }
-                if (selectedValue.equals("Lesson 14: Long O Sound")) {
-                    b.putString("pme1", "14");
-
-                }
-                if (selectedValue.equals("Lesson 15: Long A Sound")) {
-                    b.putString("pme1", "15");
-
-                }
+                Pair<String, String> result = buscarPorLesson(selectedValue);
+                b.putString(result.first, result.second);
 
                 Intent intent = new Intent(LIST.this, TUTORIAL.class);
                 intent.putExtras(b);
@@ -101,6 +85,32 @@ public class LIST extends ListActivity implements OnClickListener {
         });
 
 
+    }
+
+    private void loadTopicsFromAssets() {
+        try {
+            InputStream inputStream = getAssets().open("lessons_list.txt");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] bits = line.split(",");
+                TOPICS.add(new TOPICS_ELEMENT(bits[0], bits[1], bits[2]));
+            }
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public Pair<String, String> buscarPorLesson(String lessonBuscado) {
+        for (TOPICS_ELEMENT elemento : TOPICS) {
+            if (elemento.getLESSON().equals(lessonBuscado)) {
+                String pme = elemento.getpme();
+                String number = elemento.getnumber();
+                return new Pair<>(pme, number);
+            }
+        }
+        return null; // Devuelve null si no se encuentra el objeto con el Lesson buscado
     }
 
 

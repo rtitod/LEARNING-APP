@@ -17,12 +17,9 @@ public class TUTORIAL extends Activity {
         mWebView = (WebView) findViewById(R.id.web1);
 
         mWebView.getSettings().setJavaScriptEnabled(true);
-
-        int result = Integer.parseInt(b.getString("pme1"));
-
-        if (result == 1) {
-            mWebView.loadUrl("file:///android_asset/Lesson1.html");
-
+        if (b.containsKey("pme1")){
+            int result = Integer.parseInt(b.getString("pme1"));
+            mWebView.loadUrl("file:///android_asset/Lesson"+result+".html");
         }
 
     }
