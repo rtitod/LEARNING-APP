@@ -15,6 +15,7 @@ public class SPLASH extends Activity implements OnInitListener {
 
     private TextToSpeech myTTS;
     private int MY_DATA_CHECK_CODE = 0;
+    private boolean timerStarted = false; // Variable para verificar si el temporizador ya se ha iniciado
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,21 +29,24 @@ public class SPLASH extends Activity implements OnInitListener {
         startActivityForResult(checkTTSIntent, MY_DATA_CHECK_CODE);
 
         // Start a timer to display the splash screen for 5 seconds
-        Thread timer = new Thread() {
-            public void run() {
-                try {
-                    sleep(5000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } finally {
-                    // After the timer ends, navigate to PronunciationmadeeasyActivity
-                    Intent i = new Intent(SPLASH.this, PronunciationmadeeasyActivity.class);
-                    finish();
-                    startActivity(i);
+        if (!timerStarted) {
+            Thread timer = new Thread() {
+                public void run() {
+                    timerStarted = true; // Marcar que el temporizador ha sido iniciado
+                    try {
+                        sleep(5000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    } finally {
+                        // After the timer ends, navigate to PronunciationmadeeasyActivity
+                        Intent i = new Intent(SPLASH.this, PronunciationmadeeasyActivity.class);
+                        finish();
+                        startActivity(i);
+                    }
                 }
-            }
-        };
-        timer.start();
+            };
+            timer.start();
+        }
     }
 
     @Override
