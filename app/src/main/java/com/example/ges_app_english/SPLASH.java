@@ -3,6 +3,7 @@ package com.example.ges_app_english;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
 import android.util.Log;
@@ -17,6 +18,10 @@ public class SPLASH extends Activity implements OnInitListener {
     private int MY_DATA_CHECK_CODE = 0;
     private boolean timerStarted = false; // Variable para verificar si el temporizador ya se ha iniciado
 
+
+
+    private Handler handler = new Handler(); // Handler para gestionar los retrasos
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,26 +33,23 @@ public class SPLASH extends Activity implements OnInitListener {
         checkTTSIntent.setAction(TextToSpeech.Engine.ACTION_CHECK_TTS_DATA);
         startActivityForResult(checkTTSIntent, MY_DATA_CHECK_CODE);
 
-        // Start a timer to display the splash screen for 5 seconds
+        // Lanzar el temporizador utilizando Handler
         if (!timerStarted) {
-            Thread timer = new Thread() {
+            handler.postDelayed(new Runnable() {
+                @Override
                 public void run() {
-                    timerStarted = true; // Marcar que el temporizador ha sido iniciado
-                    try {
-                        sleep(5000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    } finally {
+                    if (!isFinishing()) {
                         // After the timer ends, navigate to PronunciationmadeeasyActivity
                         Intent i = new Intent(SPLASH.this, PronunciationmadeeasyActivity.class);
                         finish();
                         startActivity(i);
                     }
                 }
-            };
-            timer.start();
+            }, 5000); // Retraso de 5 segundos
+            timerStarted = true;
         }
     }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -72,7 +74,7 @@ public class SPLASH extends Activity implements OnInitListener {
                 myTTS.setLanguage(Locale.US);
                 // Speak the welcome message after TTS initialization is successful
                 Log.d("TTS", "Calling To SpeakWords");
-                speakWords("Welcome to my Learning English App");
+                speakWords("Welcome to Solo Learn App");
             }
         // 2 seconds delay before checking language availability
         } else {
