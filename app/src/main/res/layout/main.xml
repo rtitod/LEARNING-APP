@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/cadet_blue"
+    android:background="@color/light_grey"
     android:orientation="vertical">
 
 
@@ -10,12 +10,29 @@
         android:layout_width="fill_parent"
         android:layout_height="80dp"
         android:layout_gravity="center_horizontal"
-        android:fontFamily="@font/asset"
+        android:fontFamily="@font/anton"
         android:gravity="center"
         android:text="Menu"
-        android:textColor="@color/white"
-        android:textSize="22sp"
+        android:textColor="@color/dark_blue"
+        android:textSize="35sp"
         android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnExercises"
+            android:layout_width="250dp"
+            android:layout_height="70dp"
+            android:text="Exercises"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:background="@drawable/mainbutton" />
+
+    </LinearLayout>
 
 
     <LinearLayout
@@ -24,11 +41,30 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <ImageButton
+        <Button
+            android:id="@+id/btnVersus"
+            android:layout_width="250dp"
+            android:layout_height="70dp"
+            android:text="Versus"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:background="@drawable/mainbutton" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
             android:id="@+id/btnTutorial"
             android:layout_width="250dp"
             android:layout_height="70dp"
-            android:background="@drawable/tutorial" />
+            android:text="Tutorial"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:background="@drawable/mainbutton" />
 
     </LinearLayout>
 
@@ -39,11 +75,14 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <ImageButton
+        <Button
             android:id="@+id/btnWord"
             android:layout_width="250dp"
             android:layout_height="70dp"
-            android:background="@drawable/text" />
+            android:text="Homophones"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:background="@drawable/mainbutton" />
 
     </LinearLayout>
 
@@ -54,11 +93,14 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <ImageButton
+        <Button
             android:id="@+id/Start"
             android:layout_width="250dp"
             android:layout_height="70dp"
-            android:background="@drawable/words" />
+            android:text="Speech"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:background="@drawable/mainbutton" />
 
     </LinearLayout>
 
@@ -68,12 +110,26 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <ImageButton
+        <Button
             android:id="@+id/exit"
             android:layout_width="250dp"
             android:layout_height="70dp"
-            android:background="@drawable/exit" />
+            android:text="Exit"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:background="@drawable/mainbutton" />
 
     </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/peopletalking"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp" />
 
 </LinearLayout>

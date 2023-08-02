@@ -6,8 +6,8 @@
     android:layout_height="fill_parent"
     android:padding="10dp"
     android:textStyle="bold"
-    android:textColor="#cc3333"
-    android:background="#ffffcc"
+    android:textColor="@color/dark_red"
+    android:background="@color/light_goldenrod_yellow"
     android:textSize="14sp">
     
 

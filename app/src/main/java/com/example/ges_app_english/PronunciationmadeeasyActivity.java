@@ -8,16 +8,15 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.view.WindowManager;
-import android.widget.ImageButton;
-
+import android.widget.Button;
 import java.util.Locale;
 
 public class PronunciationmadeeasyActivity extends Activity {
 
-    private ImageButton btnStart;
-    private ImageButton btnListWord;
-    private ImageButton btnTutorial;
-    private ImageButton btnExit;
+    private Button btnStart;
+    private Button btnListWord;
+    private Button btnTutorial;
+    private Button btnExit;
     private TextToSpeech ttobj;
     private MediaPlayer mediaPlayer;
     private final Context context = this;

@@ -8,11 +8,11 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Travel Through Words"
-        android:textColor="#500000"
         android:textSize="20dp"
         android:gravity="center"
         android:layout_gravity="center"
-        android:background="#F0E68C"/>
+        android:textColor="@color/dark_red"
+        android:background="@color/light_goldenrod_yellow"/>
     <WebView 
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"

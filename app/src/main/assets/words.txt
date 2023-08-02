@@ -1,7 +1,81 @@
-accessary, accessory
-ad, add
-ail, ale
-air, heir
-aisle, I'll, isle
-all, awl
-allowed, aloud
+Accessary, Accessory
+Ad, Add
+Ail, Ale
+Air, Heir
+Aisle, I'll, Isle
+All, Awl
+Allowed, Aloud
+Ant, Aunt
+Ate, Eight
+Bail, Bale
+Bare, Bear
+Base, Bass
+Beach, Beech
+Beat, Beet
+Bell, Belle
+Berry, Bury
+Brake, Break
+Buy, By, Bye
+Cell, Sell
+Cent, Scent, Sent
+Chews, Choose
+Coarse, Course
+Complement, Compliment
+Current, Currency
+Dear, Deer
+Die, Dye
+Fair, Fare
+Flower, Flour
+For, Four
+Gene, Jean
+Gnu, New
+Grate, Great
+Hair, Hare
+Heal, Heel
+Hear, Here
+Higher, Hire
+Hole, Whole
+Hour, Our
+It's, Its
+Knot, Not
+Know, No
+Lacks, Lax
+Mail, Male
+Main, Mane
+Meat, Meet
+Minor, Miner
+Morning, Mourning
+Pail, Pale
+Pair, Pear
+Peace, Piece
+Plane, Plain
+Principal, Principle
+Rain, Reign, Rein
+Read, Red
+Right, Write
+Ring, Wring
+Road, Rode
+Rows, Rose
+Sea, See
+Sew, Sow
+So, Sow
+Sole, Soul
+Stationary, Stationery
+Sun, Son
+Tail, Tale
+Their, There, They're
+Threw, Through
+To, Too, Two
+Vain, Vane, Vein
+Waist, Waste
+Wait, Weight
+War, Wore
+Way, Weigh
+Weak, Week
+Weather, Whether
+Which, Witch
+Whole, Hole
+Won, One
+Would, Wood
+Your, You're
+Yore, Your

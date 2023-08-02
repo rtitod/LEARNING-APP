@@ -1,53 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/pale_turquoise">
+    android:gravity="center"
+    android:background="@color/white">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="60dp"
-        android:fontFamily="@font/asset"
-        android:gravity="center"
-        android:text="Travel "
-        android:textColor="@color/chocolate"
-        android:textSize="30sp" />
+    <ImageView
+        android:layout_width="324dp"
+        android:layout_height="294dp"
+        android:contentDescription="Image"
+        android:src="@drawable/sololearn" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:fontFamily="@font/asset"
-        android:text="Through"
-        android:textColor="@color/fire_brick"
-        android:textSize="30sp"
+        android:fontFamily="@font/anton"
+        android:text="Solo Learn"
+        android:textColor="@color/black"
+        android:textSize="40sp"
         android:gravity="center"
-        android:layout_marginEnd="10dp" />
+        android:paddingTop="16dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:fontFamily="@font/asset"
-        android:text="Words"
-        android:textColor="@color/chocolate"
-        android:textSize="30sp"
+        android:fontFamily="@font/"
+        android:text="Aprende A Tu Manera"
+        android:textColor="@color/black"
+        android:textSize="40sp"
         android:gravity="center"
+        android:paddingTop="8dp"
         android:layout_marginStart="10dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="60dp"
         android:fontFamily="@font/holtwood_one_sc"
-        android:gravity="center"
         android:text="A Learning App"
         android:textColor="@color/fire_brick"
-        android:textSize="35sp" />
-
+        android:textSize="30sp"
+        android:gravity="center"
+        android:paddingTop="8dp"
+        android:layout_marginStart="10dp" />
 
 </LinearLayout>
