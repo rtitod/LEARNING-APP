@@ -38,6 +38,7 @@
 
         <activity
             android:name=".SPEECH"
+            android:windowSoftInputMode="adjustPan"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
