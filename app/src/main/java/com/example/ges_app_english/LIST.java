@@ -93,7 +93,7 @@ public class LIST extends ListActivity implements OnClickListener {
             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
             String line;
             while ((line = reader.readLine()) != null) {
-                String[] bits = line.split(",");
+                String[] bits = line.split(";");
                 TOPICS.add(new TOPICS_ELEMENT(bits[0], bits[1], bits[2]));
             }
             reader.close();
