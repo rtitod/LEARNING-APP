@@ -50,38 +50,14 @@
         android:textSize="15sp" />
 
     <LinearLayout
+        android:id="@+id/LinContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingLeft="20dp"
         android:paddingRight="20dp">
 
-        <Button
-            android:id="@+id/btnSpeak"
-            android:layout_width="160dp"
-            android:layout_height="50dp"
-            android:text="Speak"
-            android:textStyle="bold"
-            android:background="@drawable/secondarybutton"
-            android:onClick="speakText" />
 
-        <Button
-            android:id="@+id/btnClear"
-            android:layout_width="160dp"
-            android:layout_height="50dp"
-            android:text="Clear"
-            android:textStyle="bold"
-            android:background="@drawable/secondarybutton" />
-
-        <Button
-            android:id="@+id/btnBack"
-            android:layout_width="160dp"
-            android:layout_height="50dp"
-            android:text="Back"
-            android:textStyle="bold"
-            android:background="@drawable/secondarybutton" />
-
-        <!-- Botón "Finalizar" a la derecha -->
 
 
     </LinearLayout>
