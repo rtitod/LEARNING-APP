@@ -2,99 +2,104 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
-    
-<TextView
-        android:layout_width="fill_parent"
-        android:text="Speech"
-        android:gravity="center"
+    android:orientation="vertical"
+    android:background="@color/light_cyan">
+
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="90dp"
-        android:textColor="@color/white"
+        android:gravity="center"
+        android:text="Exercise"
+        android:textColor="@color/black"
         android:fontFamily="@font/anton"
         android:textSize="35sp" />
 
     <LinearLayout
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="20dp"
         android:paddingTop="20dp"
-    android:orientation="horizontal" >
+        android:orientation="horizontal" >
 
-        <EditText
-            android:id="@+id/txtInput"
+        <TextView
+            android:id="@+id/questionText"
             android:layout_width="274dp"
             android:layout_height="213dp"
             android:layout_marginLeft="40dp"
-            android:layout_marginTop="20dp"
             android:gravity="top|left"
-            android:hint="Please enter some text"
+            android:text="Question Goes Here"
+            android:textColor="@color/blue"
+            android:textSize="15sp"
             android:inputType="textMultiLine"
             android:lines="25"
             android:maxWidth="5.0dip"
             android:minWidth="10.0dip"
             android:scrollbars="vertical"
             android:scrollHorizontally="false"
-            android:textColor="@color/white"
-            android:textColorHint="@color/blue"
-            android:textSize="15sp"
             android:textStyle="bold"
             android:backgroundTint="@android:color/transparent"/>
 
     </LinearLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Please, Select an Option"
+        android:textColor="@color/blue"
+        android:layout_marginLeft="20dp"
+        android:textSize="15sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <Button
+            android:id="@+id/btnSpeak"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:text="Speak"
+            android:textStyle="bold"
+            android:background="@drawable/secondarybutton"
+            android:onClick="speakText" />
+
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:text="Clear"
+            android:textStyle="bold"
+            android:background="@drawable/secondarybutton" />
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:text="Back"
+            android:textStyle="bold"
+            android:background="@drawable/secondarybutton" />
+
+        <!-- Botón "Finalizar" a la derecha -->
 
 
-<TextView
-        android:layout_width="fill_parent"
-        android:layout_height="60dp"/>
-
-<LinearLayout
-    android:layout_width="200dp"
-    android:layout_height="wrap_content"
-    android:gravity="center"
-    android:orientation="horizontal" >
-
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="80dp">
     <Button
-        android:id="@+id/btnSpeak"
-        android:layout_width="160dp"
+        android:id="@+id/btnFinalizar"
+        android:layout_width="260dp"
         android:layout_height="50dp"
-        android:text="Speak"
-        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
         android:background="@drawable/secondarybutton"
-        android:onClick="speakText"/>
+        android:paddingRight="20dp"
+        android:text="Finalizar"
+        android:textStyle="bold" />
+
 
 </LinearLayout>
-
-<LinearLayout
-    android:layout_width="200dp"
-    android:layout_height="wrap_content"
-    android:gravity="center"
-    android:orientation="horizontal" >
-
-    <Button
-        android:id="@+id/btnClear"
-       android:layout_width="160dp"
-        android:layout_height="50dp"
-        android:text="Clear"
-        android:textStyle="bold"
-        android:background="@drawable/secondarybutton"/>
-
-</LinearLayout>
-
-<LinearLayout
-    android:layout_width="200dp"
-    android:layout_height="wrap_content"
-    android:gravity="center"
-    android:orientation="horizontal" >
-
-<Button
-    android:id="@+id/btnBack"
-    android:layout_width="160dp"
-    android:layout_height="50dp"
-    android:text="Back"
-    android:textStyle="bold"
-    android:background="@drawable/secondarybutton" />
-
-</LinearLayout>
-
 </LinearLayout>

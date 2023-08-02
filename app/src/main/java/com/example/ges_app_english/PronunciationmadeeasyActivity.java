@@ -13,6 +13,7 @@ import java.util.Locale;
 
 public class PronunciationmadeeasyActivity extends Activity {
 
+    private Button btnAIQuestion;
     private Button btnStart;
     private Button btnListWord;
     private Button btnTutorial;
@@ -40,6 +41,13 @@ public class PronunciationmadeeasyActivity extends Activity {
     }
 
     private void addButtonListeners() {
+        // AI Button
+        btnAIQuestion = findViewById(R.id.btnExercises);
+        btnAIQuestion.setOnClickListener(v -> {
+            Intent intent = new Intent(PronunciationmadeeasyActivity.this, AIQUESTIONS.class);
+            startActivity(intent);
+        });
+
         // Start Button
         btnStart = findViewById(R.id.Start);
         btnStart.setOnClickListener(v -> {
